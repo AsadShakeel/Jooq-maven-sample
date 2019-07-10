@@ -40,7 +40,7 @@ public class Public extends SchemaImpl {
     /**
      * The table <code>public.sample</code>.
      */
-    public final Sample SAMPLE = Sample.SAMPLE;
+    public final Sample SAMPLE = models.tables.Sample.SAMPLE;
 
     /**
      * No further instances allowed
