@@ -37,7 +37,7 @@ public class DefaultCatalog extends CatalogImpl {
     /**
      * The schema <code>public</code>.
      */
-    public final Public PUBLIC = Public.PUBLIC;
+    public final Public PUBLIC = models.Public.PUBLIC;
 
     /**
      * No further instances allowed

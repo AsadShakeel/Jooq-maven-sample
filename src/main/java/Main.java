@@ -19,8 +19,11 @@ public class Main {
         // Connection is the only JDBC resource that we need
         // PreparedStatement and ResultSet are handled by jOOQ, internally
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
-            DSLContext create = DSL.using(conn, SQLDialect.POSTGRES);
-            Result<Record> result = create.select().from(SAMPLE).fetch();
+            DSLContext context = DSL.using(conn, SQLDialect.POSTGRES);
+
+            context.insertInto(SAMPLE, SAMPLE.ID, SAMPLE.TEMP).values(3, "temp3").execute();
+
+            Result<Record> result = context.select().from(SAMPLE).fetch();
             for (Record record : result){
                 Integer id = record.getValue(SAMPLE.ID);
                 String temp = record.getValue(SAMPLE.TEMP);
@@ -35,3 +38,4 @@ public class Main {
         }
     }
 }
+

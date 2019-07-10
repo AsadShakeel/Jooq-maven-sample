@@ -25,5 +25,5 @@ public class Tables {
     /**
      * The table <code>public.sample</code>.
      */
-    public static final Sample SAMPLE = Sample.SAMPLE;
+    public static final Sample SAMPLE = models.tables.Sample.SAMPLE;
 }
